@@ -24,12 +24,12 @@ all_transforms = transforms.Compose([transforms.Resize((424,424,3)),
                                      transforms.ToTensor(),
                                      ])
 # Create Training dataset
-train_dataset = torchvision.datasets.CIFAR10(root = '/home/harshit/vscode/git/GalaxyZoo Classification/images_training_rev1',
+train_dataset = torchvision.datasets(root = '/home/harshit/vscode/git/GalaxyZoo Classification/images_training_rev1',
                                              train = True,
                                              transform = all_transforms)
 
 # Create Testing dataset
-test_dataset = torchvision.datasets.CIFAR10(root = '/home/harshit/vscode/git/GalaxyZoo Classification/images_test_rev1',
+test_dataset = torchvision.datasets(root = '/home/harshit/vscode/git/GalaxyZoo Classification/images_test_rev1',
                                             train = False,
                                             transform = all_transforms)
 
