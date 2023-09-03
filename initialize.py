@@ -47,20 +47,18 @@ class CustomImageDataset(torch.utils.data.Dataset):
         return image, label
 
 data_transform = transforms.Compose([
-    transforms.CenterCrop((227, 227, 3)),
+    transforms.CenterCrop((227, 227)),
     transforms.ToTensor(),
 ])
 
 GalaxyZoo_dataset_training = CustomImageDataset("/home/harshit/vscode/git/GalaxyZoo Classification/training_solutions_rev1.csv", "/home/harshit/vscode/git/GalaxyZoo Classification/images_training_rev1", transform = data_transform, target_transform=None)
 GalaxyZoo_dataset_test = CustomImageDataset("/home/harshit/vscode/git/GalaxyZoo Classification/all_zeros_benchmark.csv", "/home/harshit/vscode/git/GalaxyZoo Classification/images_test_rev1", transform=data_transform, target_transform=None)
 
-dim_check_img = r"/home/harshit/vscode/git/GalaxyZoo Classification/images_training_rev1/993040.jpg"
-test_img_example = cv.imread(dim_check_img)
-print(test_img_example.shape)
 
 from torch.utils.data import DataLoader
 
 train_dataloader = DataLoader(GalaxyZoo_dataset_training, batch_size=64, shuffle=True)
 test_dataloader = DataLoader(GalaxyZoo_dataset_test, batch_size=64, shuffle=True)
+
 
 
