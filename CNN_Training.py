@@ -29,17 +29,17 @@ train9 = torch.load('./train9.pt')
 train10 = torch.load('./train10.pt')
 train11 = torch.load('./train11.pt')
 
-test1 = torch.load('./test1.pt')
-test2 = torch.load('./test2.pt')
-test3 = torch.load('./test3.pt')
-test4 = torch.load('./test4.pt')
-test5 = torch.load('./test5.pt')
-test6 = torch.load('./test6.pt')
-test7 = torch.load('./test7.pt')
-test8 = torch.load('./test8.pt')
-test9 = torch.load('./test9.pt')
-test10 = torch.load('./test10.pt')
-test11 = torch.load('./test11.pt')
+train_set1, val_set1 = torch.utils.data.random_split(train1, [int(0.8*len(train1)), len(train1) - int(0.8*len(train1))])
+train_set2, val_set2 = torch.utils.data.random_split(train2, [int(0.8*len(train2)), len(train2) - int(0.8*len(train2))])
+train_set3, val_set3 = torch.utils.data.random_split(train3, [int(0.8*len(train3)), len(train3) - int(0.8*len(train3))])
+train_set4, val_set4 = torch.utils.data.random_split(train4, [int(0.8*len(train4)), len(train4) - int(0.8*len(train4))])
+train_set5, val_set5 = torch.utils.data.random_split(train5, [int(0.8*len(train5)), len(train5) - int(0.8*len(train5))])
+train_set6, val_set6 = torch.utils.data.random_split(train6, [int(0.8*len(train6)), len(train6) - int(0.8*len(train6))])
+train_set7, val_set7 = torch.utils.data.random_split(train7, [int(0.8*len(train7)), len(train7) - int(0.8*len(train7))])
+train_set8, val_set8 = torch.utils.data.random_split(train8, [int(0.8*len(train8)), len(train8) - int(0.8*len(train8))])
+train_set9, val_set9 = torch.utils.data.random_split(train9, [int(0.8*len(train9)), len(train9) - int(0.8*len(train9))])
+train_set10, val_set10 = torch.utils.data.random_split(train10, [int(0.8*len(train10)), len(train10) - int(0.8*len(train10))])
+train_set11, val_set11 = torch.utils.data.random_split(train11, [int(0.8*len(train11)), len(train11) - int(0.8*len(train11))])
 
 train_loader1 = DataLoader(train1, batch_size=32, shuffle=True)
 train_loader2 = DataLoader(train2, batch_size=32, shuffle=True)
@@ -53,17 +53,18 @@ train_loader9 = DataLoader(train9, batch_size=32, shuffle=True)
 train_loader10 = DataLoader(train10, batch_size=32, shuffle=True)
 train_loader11 = DataLoader(train11, batch_size=32, shuffle=True)
 
-val_loader1 = DataLoader(test1, batch_size=32, shuffle=True)
-val_loader2 = DataLoader(test2, batch_size=32, shuffle=True)
-val_loader3 = DataLoader(test3, batch_size=32, shuffle=True)
-val_loader4 = DataLoader(test4, batch_size=32, shuffle=True)
-val_loader5 = DataLoader(test5, batch_size=32, shuffle=True)
-val_loader6 = DataLoader(test6, batch_size=32, shuffle=True)
-val_loader7 = DataLoader(test7, batch_size=32, shuffle=True)
-val_loader8 = DataLoader(test8, batch_size=32, shuffle=True)
-val_loader9 = DataLoader(test9, batch_size=32, shuffle=True)
-val_loader10 = DataLoader(test10, batch_size=32, shuffle=True)
-val_loader11 = DataLoader(test11, batch_size=32, shuffle=True)
+val_loader1 = DataLoader(val_set1, batch_size=32, shuffle=True)
+val_loader2 = DataLoader(val_set2, batch_size=32, shuffle=True)
+val_loader3 = DataLoader(val_set3, batch_size=32, shuffle=True)
+val_loader4 = DataLoader(val_set4, batch_size=32, shuffle=True)
+val_loader5 = DataLoader(val_set5, batch_size=32, shuffle=True)
+val_loader6 = DataLoader(val_set6, batch_size=32, shuffle=True)
+val_loader7 = DataLoader(val_set7, batch_size=32, shuffle=True)
+val_loader8 = DataLoader(val_set8, batch_size=32, shuffle=True)
+val_loader9 = DataLoader(val_set9, batch_size=32, shuffle=True)
+val_loader10 = DataLoader(val_set10, batch_size=32, shuffle=True)
+val_loader11 = DataLoader(val_set11, batch_size=32, shuffle=True)
+
 
 # Define AlexNet Architecture
 class AlexNet(nn.Module):
@@ -527,6 +528,8 @@ for epoch in range(num_epochs):
     if average_val_loss < best_val_loss:
         best_val_loss = average_val_loss
         torch.save(model11.state_dict(), 'best_model11.pth')
+
+
 
 
 

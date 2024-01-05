@@ -284,6 +284,7 @@ data_transform = transforms.Compose([
     transforms.Normalize(mean=[0.0930, 0.0806, 0.0630], std=[0.1381, 0.1159, 0.1003]),
 ])
 
+
 GalaxyZoo_dataset_training_Class1 = CustomImageDataset_Class1("/home/harshit/vscode/git/GalaxyZoo Classification/training_solutions_rev1.csv", "/home/harshit/vscode/git/GalaxyZoo Classification/images_training_rev1", transform = data_transform, target_transform=None)
 GalaxyZoo_dataset_training_Class2 = CustomImageDataset_Class2("/home/harshit/vscode/git/GalaxyZoo Classification/training_solutions_rev1.csv", "/home/harshit/vscode/git/GalaxyZoo Classification/images_training_rev1", transform = data_transform, target_transform=None)
 GalaxyZoo_dataset_training_Class3 = CustomImageDataset_Class3("/home/harshit/vscode/git/GalaxyZoo Classification/training_solutions_rev1.csv", "/home/harshit/vscode/git/GalaxyZoo Classification/images_training_rev1", transform = data_transform, target_transform=None)
