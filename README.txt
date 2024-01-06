@@ -1,8 +1,5 @@
-To add:
-
-Target_transforms for the labels to normalize the labels in each class so that the probabilities all add up to 1.
-These Target transforms are to be added in Dataset_initialize.py
-
-Make appropriate changes in Predictions.py so that the normalizations made in the Target_transforms are inverted back so that the labels
-for each class do not add up to 1 (i.e. they add up to the Whatever the probability was of the Category that lead to them in the preceding Class)
-
+Code Is Complete
+Training the 11 Model approach and the Single Model Approach is left.
+Run "CNN_Training_11Models.py" and "CNN_Training_SingleModel.py" to train the models 
+Run "Predictions_11Models.py" and "Predictions_SingleModel.py" to make predictions and generate prediction DataFrames after the saved trained models are in the root directory.
+Predicted Dataframes will be in "result_11Models.csv" for the 11 Model approach and "result_SingleModel.csv" for the Single Model approach
