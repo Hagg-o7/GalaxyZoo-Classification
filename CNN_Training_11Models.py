@@ -15,7 +15,7 @@ from PIL import Image
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
-from Dataset_initialize import CustomImageDataset_Class1, CustomImageDataset_Class2, CustomImageDataset_Class3, CustomImageDataset_Class4, CustomImageDataset_Class5, CustomImageDataset_Class6, CustomImageDataset_Class7, CustomImageDataset_Class8, CustomImageDataset_Class9, CustomImageDataset_Class10, CustomImageDataset_Class11
+from Dataset_initialize_11Models import CustomImageDataset_Class1, CustomImageDataset_Class2, CustomImageDataset_Class3, CustomImageDataset_Class4, CustomImageDataset_Class5, CustomImageDataset_Class6, CustomImageDataset_Class7, CustomImageDataset_Class8, CustomImageDataset_Class9, CustomImageDataset_Class10, CustomImageDataset_Class11
 
 train1 = torch.load('./train1.pt')
 train2 = torch.load('./train2.pt')

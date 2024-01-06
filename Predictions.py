@@ -16,7 +16,7 @@ import torch.nn.functional as F
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-from CNN_Training import AlexNet
+from CNN_Training_11Models import AlexNet
 
 model1 = AlexNet(num_classes=3)
 model2 = AlexNet(num_classes=2)
@@ -60,7 +60,7 @@ data_transform = transforms.Compose([
     transforms.Normalize(mean=[0.0930, 0.0806, 0.0630], std=[0.1381, 0.1159, 0.1003]),
 ])
 
-from Dataset_initialize import CustomImageDataset_Class1, CustomImageDataset_Class2, CustomImageDataset_Class3, CustomImageDataset_Class4, CustomImageDataset_Class5, CustomImageDataset_Class6, CustomImageDataset_Class7, CustomImageDataset_Class8, CustomImageDataset_Class9, CustomImageDataset_Class10, CustomImageDataset_Class11
+from Dataset_initialize_11Models import CustomImageDataset_Class1, CustomImageDataset_Class2, CustomImageDataset_Class3, CustomImageDataset_Class4, CustomImageDataset_Class5, CustomImageDataset_Class6, CustomImageDataset_Class7, CustomImageDataset_Class8, CustomImageDataset_Class9, CustomImageDataset_Class10, CustomImageDataset_Class11
 
 test1 = torch.load('./test1.pt')
 test2 = torch.load('./test2.pt')
